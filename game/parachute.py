@@ -36,3 +36,5 @@ class parachute():
         def display(self):
             for line in self.parachute_askii():
                 print(line)
+            print()
+            print("^^^^^^^")
