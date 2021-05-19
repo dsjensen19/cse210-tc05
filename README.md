@@ -18,6 +18,7 @@ class Director
  
  def start_game()
  def take_turn()
+
  def answered_correctly()
  def answered_incorrectly()
 
@@ -33,4 +34,5 @@ class Word_bank()
   active_phrase = string
   def choose_active_Phrase()
   def check_letter()
+  return bool
   def display()
