@@ -18,8 +18,8 @@ class Director
  
  def start_game()
  def take_turn()
- def answered_corectly()
- def answerd_incorectly()
+ def answered_correctly()
+ def answered_incorrectly()
 
 class Parachute
  pachute_askii = [strings]
