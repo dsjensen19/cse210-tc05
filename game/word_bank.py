@@ -13,18 +13,9 @@ class Word_bank():
     """
         self.active_phrase = ""
         self.distance = [0, 0]
-  #active_phrase = string
-
-    #pick a random phrase from the bible dictionary
-    
-    # Open the file in read mode
     
         self.words = words
-        
-    
-        # print random string
-    
-        
+        self.guesses = []
 
 
     def choose_active_Phrase(self,):
@@ -35,18 +26,21 @@ class Word_bank():
         #print("choose " +active_phrase)
         self.active_phrase = active_phrase
     
-    
+    """
     def check_letter(self):
         #from game.player import guesses
-        guesses = ['a','e','i','o','f','g']
+        import game.player(chosen_letters)
         for c in self.active_phrase:
-            if c in guesses:
+            if c in chosen_letters:
                 print(c)
                 #so how do I implement this with display so it shows the characters in this list on the lines from display?
                 #I'm just a bit confused as to how its split vs nto just doing it all in one function
         pass
-    
+    """
     def display(self):
+        from game.player import chosen_letters
         for c in self.active_phrase:
-            print("_",end = "")
-        print()
+            if c in chosen_letters:
+                print(c,end = "")
+            else:
+                print("_",end = "")
