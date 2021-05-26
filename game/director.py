@@ -33,8 +33,8 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
-        self.Word_bank.display()
-        self.Parachute.display()
+        self.word_bank.display()
+        self.parachute.display()
         while self.keep_playing:
             self.take_turn()
 
@@ -43,9 +43,9 @@ class Director:
     def take_turn(self):
         """Gets the guess from the player
         """
-        guess = self.Player.guess_letter()
+        guess = self.player.guess_letter()
 
-        if (self.Word_bank.check_letter(guess)):
+        if (self.word_bank.check_letter(guess)):
             self.guessed_correctly()
         else:
             self.guessed_incorrectly()
@@ -58,18 +58,23 @@ class Director:
         Args:
             self (Director): An instance of Director.
         """
-        self.Word_bank.display()
-        self.Parachute.display()
-
+        if self.word_bank.has_won():
+            self.word_bank.display()
+            self.parachute.display()
+            print("You got it!!!!!!!!")
+            self.keep_playing = False
+        else:
+            self.word_bank.display()
+            self.parachute.display()
         
     def guessed_incorrectly(self):
 
-        self.Word_bank.display()
-        self.Parachute.cut_layer()
+        self.word_bank.display()
+        self.parachute.cut_layer()
 
-        if(self.Parachute.can_cut_layer()):
-            self.Parachute.display()
+        if(self.parachute.can_cut_layer()):
+            self.parachute.display()
         else:
-            self.Parachute.display()
+            self.parachute.display()
             self.keep_playing = False
             

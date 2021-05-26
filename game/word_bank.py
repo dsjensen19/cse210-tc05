@@ -11,36 +11,46 @@ class Word_bank():
         Args:
             self (Rabbit): An instance of rabbit.
     """
+        self.chosen_letters = [" "]
+
         self.active_phrase = ""
+        self.choose_active_Phrase()
         self.distance = [0, 0]
     
         self.words = words
         self.guesses = []
 
 
-    def choose_active_Phrase(self,):
+    def choose_active_Phrase(self):
         active_phrase = (random.choice(words))
         while len(active_phrase) <=2 or len(active_phrase) >= 15:
             active_phrase = (random.choice(words))
-            active_phrase.replace(""," ")
+            active_phrase.replace(","," ")
         #print("choose " +active_phrase)
         self.active_phrase = active_phrase
     
-    """
-    def check_letter(self):
+    
+    def check_letter(self, guess):
         #from game.player import guesses
-        import game.player(chosen_letters)
-        for c in self.active_phrase:
-            if c in chosen_letters:
-                print(c)
-                #so how do I implement this with display so it shows the characters in this list on the lines from display?
-                #I'm just a bit confused as to how its split vs nto just doing it all in one function
-        pass
-    """
+        self.chosen_letters.append(guess.lower())
+        if guess in self.active_phrase:
+            return True
+        else:
+            return False
+
     def display(self):
-        from game.player import chosen_letters
-        for c in self.active_phrase:
-            if c in chosen_letters:
+        for c in self.active_phrase.lower():
+            if c in self.chosen_letters:
                 print(c,end = "")
+            elif c == " ":
+                print(" ",end = "")
             else:
                 print("_",end = "")
+        print()
+        
+    def has_won(self):
+        for c in self.active_phrase:
+            if not (c in self.chosen_letters):
+                return False
+        return True
+
