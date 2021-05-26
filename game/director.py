@@ -35,6 +35,8 @@ class Director:
         """
         self.word_bank.display()
         self.parachute.display()
+        if self.word_bank.has_won():
+            self.keep_playing = False
         while self.keep_playing:
             self.take_turn()
 
