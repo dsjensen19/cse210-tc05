@@ -39,6 +39,7 @@ class Director:
             self.take_turn()
 
         print("Game Over!")
+        print("The word was: "+ self.word_bank.active_phrase)
 
     def take_turn(self):
         """Gets the guess from the player

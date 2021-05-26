@@ -9,14 +9,11 @@ class Word_bank():
         """Class constructor. Declares and initializes instance attributes.
 
         Args:
-            self (Rabbit): An instance of rabbit.
     """
         self.chosen_letters = [" "]
-
         self.active_phrase = ""
-        self.choose_active_Phrase()
+        active_phrase = self.choose_active_Phrase()
         self.distance = [0, 0]
-    
         self.words = words
         self.guesses = []
 
@@ -52,5 +49,6 @@ class Word_bank():
         for c in self.active_phrase:
             if not (c in self.chosen_letters):
                 return False
+        print("You survived!")
         return True
 
