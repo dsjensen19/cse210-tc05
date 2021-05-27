@@ -12,7 +12,6 @@ class Word_bank():
     """
         self.chosen_letters = [" "]
         self.active_phrase = ""
-        active_phrase = self.choose_active_Phrase()
         self.distance = [0, 0]
         self.words = words
         self.guesses = []
@@ -22,12 +21,11 @@ class Word_bank():
         active_phrase = (random.choice(words))
         while len(active_phrase) <=2 or len(active_phrase) >= 15:
             active_phrase = (random.choice(words))
-            active_phrase.replace(","," ")
-        #print("choose " +active_phrase)
+        active_phrase.replace(","," ")
         self.active_phrase = active_phrase
     
     
-    def check_letter(self, guess):
+    def check_letter(self, guess): 
         #from game.player import guesses
         self.chosen_letters.append(guess.lower())
         if guess in self.active_phrase:
@@ -46,7 +44,7 @@ class Word_bank():
         print()
         
     def has_won(self):
-        for c in self.active_phrase:
+        for c in self.active_phrase.lower():
             if not (c in self.chosen_letters):
                 return False
         print("You survived!")

@@ -33,15 +33,13 @@ class Director:
         Args:
             self (Director): an instance of Director.
         """
+        self.word_bank.choose_active_Phrase()
         self.word_bank.display()
         self.parachute.display()
-        if self.word_bank.has_won():
-            self.keep_playing = False
         while self.keep_playing:
             self.take_turn()
 
-        print("Game Over!")
-        print("The word was: "+ self.word_bank.active_phrase)
+
 
     def take_turn(self):
         """Gets the guess from the player
@@ -79,5 +77,7 @@ class Director:
             self.parachute.display()
         else:
             self.parachute.display()
+            print("Game Over!")
+            print("The word was: "+ self.word_bank.active_phrase)
             self.keep_playing = False
             
