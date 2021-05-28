@@ -10,13 +10,15 @@ class Parachute():
     """Initilizes the parachute askii picture"""
     def __init__(self):
         parachute_askii = []
-        parachute_askii.append(" ___")
-        parachute_askii.append("/___\\")
-        parachute_askii.append("\\   /")
-        parachute_askii.append(" \\ /")
-        parachute_askii.append("  0")
-        parachute_askii.append(" /|\\")
-        parachute_askii.append(" / \\")
+        parachute_askii.append("   ___")
+        parachute_askii.append(" /___\\")
+        parachute_askii.append("/     \\")
+        parachute_askii.append("\\     /")
+        parachute_askii.append(" \\   /")
+        parachute_askii.append("  \\ /")
+        parachute_askii.append("   0")
+        parachute_askii.append("  /|\\")
+        parachute_askii.append("  / \\")
         self.parachute_askii = parachute_askii
 
     """if there are more than three lines returns true"""
