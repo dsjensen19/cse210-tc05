@@ -1,5 +1,5 @@
 # cse210-tc05
-
+AUTHOR NAMES: Tyson Brost, Derek Jensen, Seth Burton, Chris Patrinovich
 
 
 
